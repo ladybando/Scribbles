@@ -21,3 +21,4 @@ Without the resources listed below this project would not have come to fruition
 - https://github.com/codepath/android_guides/wiki#getting-started
 - https://www.hacksplaining.com/prevention/sql-injection
 - https://developer.android.com/reference/android/database/sqlite/SQLiteOpenHelper
+- https://blog.mindorks.com/recyclerview-multiple-view-types-in-android
