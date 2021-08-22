@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Scribbles</string>
+    <string name="view">view</string>
+    <string name="float_button">Add new scribble</string>
+    <string name="scribble1">Take out trash</string>
+    <string name="scribble2">Wash clothes</string>
+    <string name="scribble3">Fold clothes</string>
+    <string name="scribble4">Throw clothes in trash!</string>
+    <string name="scribble5">Refer to task 1</string>
+    <string name="scribble6">Enter Text</string>
+    <string name="title">title</string>
+    <string name="text">text</string>
+    <string name="enter_new_note">Enter new note</string>
+    <string name="submit_new_button">Submit new task</string>
+    <string name="submit">Submit</string>
+</resources>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fce4ec"
+    tools:context=".MainActivity">
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="447dp"
+        android:contentDescription="@string/view"
+        android:scrollbars="vertical"
+        app:layoutManager="LinearLayoutManager"
+        tools:listitem="@layout/list_item" />
+
+    <EditText
+        android:id="@+id/written_note"
+        android:layout_width="274dp"
+        android:layout_height="65dp"
+        android:layout_gravity="center|bottom"
+        android:layout_marginBottom="70dp"
+        android:hint="@string/enter_new_note"
+        android:inputType="text"
+        android:padding="10dp"
+        android:textColorHint="@color/pink_a_700"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end|bottom"
+            android:layout_margin="20dp"
+            android:contentDescription="@string/float_button"
+            android:src="@drawable/ic_add_new" />
+
+</FrameLayout>
