@@ -4,6 +4,7 @@ import com.example.android.scribbles.AddActivity
 
 class Userdata {
     fun createScribble(userNote: String): MutableList<String> {
+        //should add userNote to mutable list not return
         return mutableListOf(userNote)
     }
 
