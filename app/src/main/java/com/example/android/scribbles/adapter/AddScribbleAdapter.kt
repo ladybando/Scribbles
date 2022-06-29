@@ -1,4 +1,4 @@
-package com.example.android.scribbles.ui
+package com.example.android.scribbles.adapter
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -26,7 +26,7 @@ private val noteList : MutableList<String>
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NewItemViewHolder {
-        val adapterLayout = LayoutInflater.from(parent.context).inflate(R.layout.activity_add,parent,false)
+        val adapterLayout = LayoutInflater.from(parent.context).inflate(R.layout.fragment_add_new_note,parent,false)
         return NewItemViewHolder(adapterLayout)
     }
 

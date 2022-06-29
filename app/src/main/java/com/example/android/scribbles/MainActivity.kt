@@ -5,8 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.android.scribbles.data.Datasource
 import com.example.android.scribbles.databinding.ActivityMainBinding
-import com.example.android.scribbles.ui.ScribbleAdapter
-import com.google.android.material.floatingactionbutton.FloatingActionButton
+import com.example.android.scribbles.adapter.ScribbleAdapter
 
 
 class MainActivity : AppCompatActivity() {
@@ -15,13 +14,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         val binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        //load data
-        val myDataset=Datasource().loadScribbles()
-
-        //access views
-        val recyclerView=binding.recyclerView
-        recyclerView.adapter=ScribbleAdapter(this, myDataset)
-        recyclerView.layoutManager=GridLayoutManager(this,2)
     }
 
 }

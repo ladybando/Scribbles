@@ -8,7 +8,7 @@ import android.widget.ImageButton
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.android.scribbles.data.Userdata
-import com.example.android.scribbles.ui.AddScribbleAdapter
+import com.example.android.scribbles.adapter.AddScribbleAdapter
 
 class AddActivity : AppCompatActivity() {
 
@@ -16,14 +16,14 @@ class AddActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_add)
+        setContentView(R.layout.fragment_add_new_note)
 
 
         //get user data
         val userData=Userdata().createScribble(newnote.text.toString())
 
         val recyclerView=findViewById<RecyclerView>(R.id.recycler_view)
-        recyclerView.adapter=AddScribbleAdapter(this, userData)
+        recyclerView.adapter= AddScribbleAdapter(this, userData)
         recyclerView.layoutManager=LinearLayoutManager(this)
 
         //add user input to mutable list
@@ -36,7 +36,7 @@ class AddActivity : AppCompatActivity() {
 
         val backButton : ImageButton=findViewById(R.id.back_button)
         backButton.setOnClickListener{
-            setContentView(R.layout.activity_add)
+            setContentView(R.layout.fragment_add_new_note)
         }
     }
 
