@@ -5,32 +5,47 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.recyclerview.widget.GridLayoutManager
+import androidx.fragment.app.activityViewModels
+import androidx.navigation.fragment.findNavController
 import com.example.android.scribbles.adapter.ScribbleAdapter
-import com.example.android.scribbles.data.Datasource
 import com.example.android.scribbles.databinding.FragmentNotesLayoutBinding
+import com.example.android.scribbles.databinding.ListItemBinding
+import com.example.android.scribbles.model.ScribblesViewModel
 
-class NotesLayoutFragment : Fragment() {
-    private var _binding: FragmentNotesLayoutBinding? = null
+class NotesLayoutFragment : Fragment(), ScribbleAdapter.Listener {
+    private var _binding: ListItemBinding? = null
     private val binding get() = _binding!!
 
+    private val viewModel: ScribblesViewModel by activityViewModels()
+    private lateinit var adapter: ScribbleAdapter
+
+    //not inflating view if listItem called here
+    //will inflate if fragment_notes... called here
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentNotesLayoutBinding.inflate(inflater, container, false)
+        _binding = ListItemBinding.inflate(inflater, container, false)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         //load data
-        val myDataset= Datasource().loadScribbles()
-/*
-        //access views
-        val recyclerView=binding.recyclerView
-        recyclerView.adapter= ScribbleAdapter(this, myDataset)
-        recyclerView.layoutManager= GridLayoutManager(this,2)*/
+        viewModel.taskNote.observe(viewLifecycleOwner){ taskNotes ->
+            adapter = ScribbleAdapter(this.requireActivity(), taskNotes, this)
+            binding.recyclerView.adapter = adapter
+        }
+
+    }
+
+    override fun onFabClicked(view: View) {
+        val action = NotesLayoutFragmentDirections.actionNotesLayoutFragmentToAddNewNoteFragment()
+        findNavController().navigate(action)
+    }
+
+    override fun onTaskNoteClicked(index: Int) {
+        TODO("Not yet implemented")
     }
 }

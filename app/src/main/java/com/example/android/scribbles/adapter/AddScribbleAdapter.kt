@@ -15,7 +15,7 @@ class AddScribbleAdapter(private val context: Context, private val newNote: Muta
 private val noteList : MutableList<String>
 
     init {
-        val notes= Userdata().getScribble()
+        val notes= Userdata().getUser()
         noteList=notes
     }
 

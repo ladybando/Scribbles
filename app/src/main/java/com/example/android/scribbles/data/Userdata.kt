@@ -1,20 +1,21 @@
 package com.example.android.scribbles.data
 
-import com.example.android.scribbles.AddActivity
-
 class Userdata {
-    fun createScribble(userNote: String): MutableList<String> {
+    private val _accountUserName : String? = null
+    var accountUserName = _accountUserName!!
+
+    fun createUser(userName: String) {
         //should add userNote to mutable list not return
-        return mutableListOf(userNote)
+        accountUserName = userName
     }
 
-    fun getScribble():MutableList<String>{
+    fun getUser() : MutableList<String>{
         return mutableListOf()
     }
 
-    fun addScribble(userNote: String){
+/*    fun addScribble(userNote: String){
         val updateList = createScribble(userNote)
         val input=AddActivity().addNewNote()
         updateList.add(input.toString())
-    }
+    }*/
 }

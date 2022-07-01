@@ -5,19 +5,19 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
+
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/linear_item_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:background="#fce4ec"
         android:layout_margin="8dp"
-        app:cardCornerRadius="8dp"
-        app:cardElevation="4dp"
         android:padding="10dp"
         android:checkable="true"
         android:clickable="true"
         android:focusable="true"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="4dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
